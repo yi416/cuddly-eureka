@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="UTF-8">
+ <title>倒计时</title>
+ <script type="text/javascript">        
+             var maxtime = 60 * 60; //一个小时，按秒计算，自己调整!   
+             function CountDown() {
+                 if (maxtime >= 0) {
+                     minutes = Math.floor(maxtime / 60);
+                     seconds = Math.floor(maxtime % 60);
+                     msg = "支付倒计时：" + minutes + "分" + seconds + "秒";
+                     document.all["timer"].innerHTML = msg;
+					 --maxtime;
+                 } 
+				 else{
+                     clearInterval(timer);
+                     alert("时间到，未支付成功！");
+                 }
+             }
+             timer = setInterval("CountDown()", 1000);                
+         </script>
+ </head>
+ <body>
+ <div id="timer"></div>
+ </body>
+ </html>
